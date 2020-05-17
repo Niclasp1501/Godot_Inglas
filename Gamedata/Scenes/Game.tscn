@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Player.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Dungeon_A1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Figuren.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/Ingmar/Ingmar.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Run"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.136551, 0.278163 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 24, 25, 26 ]
+}
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 85.1339, 52.4481 )
+scale = Vector2( 3.87672, 4.46422 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 8
+script = ExtResource( 2 )
+
+[node name="Dungeon_A1" type="Sprite" parent="."]
+position = Vector2( -131.599, 75.7307 )
+scale = Vector2( 1, 1.02344 )
+texture = ExtResource( 3 )
+vframes = 12
+hframes = 16
+
+[node name="Figuren" type="Sprite" parent="."]
+position = Vector2( 72.0587, -28.4264 )
+scale = Vector2( 1, 1.02344 )
+texture = ExtResource( 4 )
+vframes = 8
+hframes = 12
+frame = 79
+
+[node name="Ingmar" type="Sprite" parent="."]
+position = Vector2( 128.938, 63.0474 )
+scale = Vector2( 1, 1.02344 )
+texture = ExtResource( 5 )
+vframes = 8
+hframes = 12
+frame = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ingmar"]
+autoplay = "Run"
+anims/Run = SubResource( 1 )

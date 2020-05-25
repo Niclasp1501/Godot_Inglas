@@ -8,35 +8,35 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 45, 0, 45, 48 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 45, 48, 45, 48 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 90, 48, 45, 48 )
-
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 48, 45, 48 )
-
-[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 96, 45, 48 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 45, 96, 45, 48 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 90, 96, 45, 48 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 45, 48, 45, 48 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 90, 48, 45, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 48, 45, 48 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -45,15 +45,15 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 2 ) ],
-"loop": true,
-"name": "RunLeft",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "RunRight",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "RunLeft",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=9]

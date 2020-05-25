@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Inglas_Planet.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Background/Spacebackground.jpg" type="Texture" id=3]
+[ext_resource path="res://Scenes/Menu/BTN_Spielladen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Background/HUD3.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Menu/BTN_NeuesSpiel.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 159.727, 131.667 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 513.717, 365.862 )
+scale = Vector2( 0.782795, 0.767254 )
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 154.0
+margin_right = -29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cennter Rows" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 971.0
+margin_bottom = 446.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/Cennter Rows"]
+margin_right = 971.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Neues Spiel" parent="VBoxContainer/Cennter Rows/Buttons" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 138.0
+margin_right = 971.0
+margin_bottom = 218.0
+rect_min_size = Vector2( 400, 80 )
+
+[node name="SpielladenBTN" parent="VBoxContainer/Cennter Rows/Buttons" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 228.0
+margin_right = 971.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 400, 80 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 820.474
+margin_top = 8.883
+margin_right = 1195.47
+margin_bottom = 279.883
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 366.941
+margin_top = 159.727
+margin_right = 669.941
+margin_bottom = 210.727
+custom_fonts/font = SubResource( 1 )
+text = "ESCAPE ARA"
+__meta__ = {
+"_edit_use_anchors_": false
+}

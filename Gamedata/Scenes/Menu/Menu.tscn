@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Inglas_Planet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Logo/Inglas_Production.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Background/Spacebackground.jpg" type="Texture" id=3]
 [ext_resource path="res://Scenes/Menu/BTN_Spielladen.tscn" type="PackedScene" id=4]
@@ -65,10 +65,12 @@ margin_right = 971.0
 margin_bottom = 308.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 820.474
-margin_top = 8.883
-margin_right = 1195.47
-margin_bottom = 279.883
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 295.202
+margin_top = -9.52266
+margin_right = 120.202
+margin_bottom = -262.523
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 stretch_mode = 3

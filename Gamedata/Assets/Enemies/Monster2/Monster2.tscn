@@ -161,7 +161,7 @@ tracks/11/keys = {
 "values": [ 0.0, -46.8, 0.0, 18.7, 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Torso/ArmLeft:position")
 tracks/0/interp = 1
@@ -343,4 +343,4 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Run = SubResource( 2 )
-anims/Stand = SubResource( 4 )
+anims/Stand = SubResource( 3 )

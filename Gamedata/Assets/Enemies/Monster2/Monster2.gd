@@ -14,9 +14,12 @@ func _ready():
 func _physics_process(delta):
 	velocity.x = SPEED * direction
 	
-	if direction == 1:
-		$AnimationPlayer.play("Run")
+	#if direction == 1:
+		
+	#else:
+		#$AnimationPlayer.get_animation(flip)
 	
+	$AnimationPlayer.play("Run")
 
 	
 	velocity.y += GRAVTIY	 

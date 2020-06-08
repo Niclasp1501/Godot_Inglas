@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Monster_Head.png-401388af9cf8fd90b68f76eebf21016e.stex"
+path="res://.import/Spaceship_fly.png-d1068ac839ec2a3dcabd55fd6c8ba928.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Monster2/Monster_Head.png"
-dest_files=[ "res://.import/Monster_Head.png-401388af9cf8fd90b68f76eebf21016e.stex" ]
+source_file="res://Assets/Background/Spaceship_fly.png"
+dest_files=[ "res://.import/Spaceship_fly.png-d1068ac839ec2a3dcabd55fd6c8ba928.stex" ]
 
 [params]
 

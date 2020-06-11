@@ -15,6 +15,7 @@ func set_stone_direction(dir):
 		
 func _physics_process(delta):
 	velocity.x = SPEED * delta * direction
+	velocity.y = delta* gravity
 	
 	translate(velocity)
 	$AnimatedSprite.play("Stone")

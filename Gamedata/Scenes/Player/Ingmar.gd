@@ -12,10 +12,22 @@ const STONE = preload("res://Assets/Weapon/Stone/Stone.tscn")
 var velocity = Vector2()
 
 var on_ground = false
+var is_dead = false
 
+func _on_EnemyDetector_body_entered(body):
+	#is_dead = true
+	#velocity = Vector2(0,0)
+	#AnimatedSprite.play("dead")
+	#$CollisionShape.disabled = true
+	get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")
+	#$Timer.start()
+	
 
+#func _on_Timer_timeout():
+	#get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")
+	
 func _physics_process(delta):
-		
+	if is_dead == false:	
 		if Input.is_action_pressed("ui_right"):
 			velocity.x = SPEED
 			#$AnimatedSprite.play("RunRight")

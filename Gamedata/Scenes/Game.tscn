@@ -469,4 +469,4 @@ editor_draw_drag_margin = true
 position = Vector2( 524.319, 242.927 )
 
 [node name="Monster2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 862.32, 436.927 )
+position = Vector2( 376.32, 531.927 )

@@ -8,37 +8,36 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 135.15, 168.994 )
+extents = Vector2( 209.101, 168.994 )
 
 [node name="Monster" type="KinematicBody2D"]
 scale = Vector2( 0.15, 0.15 )
+collision_layer = 2
+collision_mask = 15
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 48.2969, 98.3276 )
 scale = Vector2( 1.6517, 1.78427 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 60.4374, 95.5979 )
+position = Vector2( 38.7931, 101.911 )
 shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Monster_Body.png-891bc79c0d0b49b8a54ad7a79520946a.stex"
+path="res://.import/Monster_LegRight.png-dbab7677ce73357aed7bfcdd2418118e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Monster_CutoutAnimation/Monster_Body.png"
-dest_files=[ "res://.import/Monster_Body.png-891bc79c0d0b49b8a54ad7a79520946a.stex" ]
+source_file="res://Assets/Enemies/Monster_OLD/Monster_LegRight.png"
+dest_files=[ "res://.import/Monster_LegRight.png-dbab7677ce73357aed7bfcdd2418118e.stex" ]
 
 [params]
 

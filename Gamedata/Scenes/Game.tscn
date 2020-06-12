@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Background/BO.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Player/Ingmar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enemies/Monster_AnimatedSprite/Monster.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Spaceship_Part/SpacePart.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Spaceship_Part/SpacePart.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/SpacePart.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -426,6 +426,7 @@ scroll_base_scale = Vector2( 0.1, 0.1 )
 motion_mirroring = Vector2( 816, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 4.36935, -3.1777 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -477,7 +478,7 @@ position = Vector2( 524.319, 242.927 )
 position = Vector2( 376.32, 531.927 )
 
 [node name="Collectable" type="Node2D" parent="."]
-position = Vector2( 434.318, 553.428 )
+position = Vector2( 452.193, 555.811 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {

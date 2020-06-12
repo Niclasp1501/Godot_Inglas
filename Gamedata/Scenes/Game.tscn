@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/Background/Spaceship.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Titelset/Wald-Titelset.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Background/BO.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Player/Ingmar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enemies/Monster_AnimatedSprite/Monster.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Spaceship_Part/SpacePart.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/SpacePart.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 48, 0, 48, 48, 0, 48 )
@@ -398,6 +400,9 @@ resource_local_to_scene = true
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 50.8429, 24.1065 )
 
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 15.6966, 35.1893 )
+
 [node name="Stage_1" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -470,3 +475,22 @@ position = Vector2( 524.319, 242.927 )
 
 [node name="Monster2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 376.32, 531.927 )
+
+[node name="Collectable" type="Node2D" parent="."]
+position = Vector2( 434.318, 553.428 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpacePart" type="Area2D" parent="Collectable"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectable/SpacePart"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable/SpacePart"]
+position = Vector2( -1.88677, 1.13206 )
+shape = SubResource( 19 )
+[connection signal="body_entered" from="Collectable/SpacePart" to="Collectable/SpacePart" method="_on_SpacePart_body_entered"]

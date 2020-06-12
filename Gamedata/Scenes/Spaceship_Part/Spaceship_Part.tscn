@@ -1,7 +1,0 @@
-[gd_scene format=2]
-
-[node name="Spaceship_Part" type="RigidBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="."]

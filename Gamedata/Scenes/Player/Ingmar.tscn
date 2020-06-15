@@ -128,7 +128,6 @@ hframes = 3
 visible = false
 frames = SubResource( 8 )
 animation = "RunLeft"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

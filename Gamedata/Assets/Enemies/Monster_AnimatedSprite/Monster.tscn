@@ -20,7 +20,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 209.101, 168.994 )
+extents = Vector2( 201.886, 168.994 )
 
 [node name="Monster" type="KinematicBody2D"]
 scale = Vector2( 0.15, 0.15 )
@@ -33,11 +33,11 @@ position = Vector2( 48.2969, 98.3276 )
 scale = Vector2( 1.6517, 1.78427 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 38.7931, 101.911 )
+position = Vector2( 55.9282, 98.3036 )
 shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

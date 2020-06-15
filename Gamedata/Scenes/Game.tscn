@@ -471,13 +471,13 @@ drag_margin_bottom = 0.26
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Monster" parent="." instance=ExtResource( 7 )]
+[node name="Monster1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 524.319, 242.927 )
 
 [node name="Monster2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 376.32, 531.927 )
+position = Vector2( 979.055, 389.388 )
 
-[node name="Collectable" type="Node2D" parent="."]
+[node name="Collectable1" type="Node2D" parent="."]
 position = Vector2( 452.193, 555.811 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
@@ -485,13 +485,75 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="SpacePart" type="Area2D" parent="Collectable"]
+[node name="SpacePart" type="Area2D" parent="Collectable1"]
 script = ExtResource( 9 )
 
-[node name="Sprite" type="Sprite" parent="Collectable/SpacePart"]
+[node name="Sprite" type="Sprite" parent="Collectable1/SpacePart"]
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable/SpacePart"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable1/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
-[connection signal="body_entered" from="Collectable/SpacePart" to="Collectable/SpacePart" method="_on_SpacePart_body_entered"]
+
+[node name="Collectable2" type="Node2D" parent="."]
+position = Vector2( 1077.9, 363.768 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpacePart" type="Area2D" parent="Collectable2"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectable2/SpacePart"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable2/SpacePart"]
+position = Vector2( -1.88677, 1.13206 )
+shape = SubResource( 19 )
+
+[node name="Collectable3" type="Node2D" parent="."]
+position = Vector2( 678.454, 460.837 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpacePart" type="Area2D" parent="Collectable3"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectable3/SpacePart"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable3/SpacePart"]
+position = Vector2( -1.88677, 1.13206 )
+shape = SubResource( 19 )
+
+[node name="Score Counter" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="Score Counter"]
+
+[node name="Base" type="Control" parent="Score Counter/UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Score Counter/UI/Base"]
+margin_left = 126.05
+margin_top = 10.7142
+margin_right = 166.05
+margin_bottom = 50.7142
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable2/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable3/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]

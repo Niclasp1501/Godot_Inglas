@@ -13,6 +13,7 @@ var velocity = Vector2()
 
 var on_ground = false
 var is_dead = false
+var score = 0
 
 func _on_EnemyDetector_body_entered(body):
 	#is_dead = true
@@ -26,8 +27,16 @@ func _on_EnemyDetector_body_entered(body):
 #func _on_Timer_timeout():
 	#get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")
 	
+func _ready():
+	set_physics_process(true)
+	set_process(true)
+	
+func _process(delta):
+	var LabelNode = get_parent().get_node("Score Counter/UI/Base/RichTextLabel")
+	LabelNode.text = str(score)
+	
 func _physics_process(delta):
-	if is_dead == false:	
+	#if is_dead == false:			
 		if Input.is_action_pressed("ui_right"):
 			velocity.x = SPEED
 			#$AnimatedSprite.play("RunRight")
@@ -68,3 +77,7 @@ func _physics_process(delta):
 			on_ground = false
 			
 		velocity = move_and_slide(velocity, FLOOR)
+
+
+func _on_SpacePart_body_entered(body):
+	score +=1

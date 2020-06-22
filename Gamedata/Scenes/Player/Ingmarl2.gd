@@ -8,7 +8,7 @@ const FLOOR = Vector2(0,-1)
 
 const STONE = preload("res://Assets/Weapon/Stone/Stone.tscn")
 const LASER = preload("res://Assets/Weapon/Laser/Laser.tscn")
-var nl= false
+var nl= true
 
 var velocity = Vector2()
 var on_ground = false

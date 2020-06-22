@@ -7,17 +7,25 @@ const JUMP_POWER = -400
 const FLOOR = Vector2(0,-1)
 
 const STONE = preload("res://Assets/Weapon/Stone/Stone.tscn")
-const LASER = preload("res://Assets/Weapon/Laser/Laser.tscn")
-var nl= false
+var nl=false
 
 var velocity = Vector2()
+
 var on_ground = false
 var is_dead = false
 var score = 0
 
 func _on_EnemyDetector_body_entered(body):
+	#is_dead = true
+	#velocity = Vector2(0,0)
+	#AnimatedSprite.play("dead")
+	#$CollisionShape.disabled = true
 	get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")
+	#$Timer.start()
+	
 
+#func _on_Timer_timeout():
+	#get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")
 	
 func _ready():
 	set_physics_process(true)
@@ -50,27 +58,17 @@ func _physics_process(delta):
 			if on_ground == true:
 				velocity.y = JUMP_POWER
 				on_ground = false
+				
+		if Input.is_action_just_pressed("Use"):
+			
+			var stone = STONE.instance()
+			if sign($Position2D.position.x) == 1:
+				stone.set_stone_direction(1)
+			else:
+				stone.set_stone_direction(-1)
+			get_parent().add_child(stone)
+			stone.position = $Position2D.global_position
 		
-		if nl == false:		
-			if Input.is_action_just_pressed("Use"):
-				var stone = STONE.instance()
-				if sign($Position2D.position.x) == 1:
-					stone.set_stone_direction(1)
-				else:
-					stone.set_stone_direction(-1)
-				get_parent().add_child(stone)
-				stone.position = $Position2D.global_position
-		else:
-			if Input.is_action_just_pressed("Use"):
-				var laser = LASER.instance()
-				if sign($Position2D.position.x) == 1:
-					laser.set_stone_direction(1)
-				else:
-					laser.set_stone_direction(-1)
-				get_parent().add_child(laser)
-				laser.position = $Position2D.global_position	
-				
-				
 		velocity.y = velocity.y + GRAVITY
 		
 		if is_on_floor():
@@ -82,5 +80,5 @@ func _physics_process(delta):
 
 
 func _on_SpacePart_body_entered(body):
-	if body.name == "Ingmar":
+	if body.name =="Ingmar":
 		score +=1

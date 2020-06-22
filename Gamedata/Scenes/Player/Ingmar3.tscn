@@ -6,32 +6,32 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 96, 45, 48 )
+region = Rect2( 0, 48, 45, 48 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 45, 96, 45, 48 )
+region = Rect2( 45, 48, 45, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 90, 96, 45, 48 )
+region = Rect2( 90, 48, 45, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 48, 45, 48 )
+region = Rect2( 0, 96, 45, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 45, 48, 45, 48 )
+region = Rect2( 45, 96, 45, 48 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 90, 48, 45, 48 )
+region = Rect2( 90, 96, 45, 48 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
@@ -42,13 +42,13 @@ region = Rect2( 45, 0, 45, 48 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "RunRight",
-"speed": 8.0
+"name": "RunLeft",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "RunLeft",
-"speed": 10.0
+"name": "RunRight",
+"speed": 8.0
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": false,
@@ -115,6 +115,9 @@ extents = Vector2( 19.6114, 21.9249 )
 [node name="Ingmar" type="KinematicBody2D"]
 position = Vector2( 317.919, 158.697 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -129,11 +132,11 @@ frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.11383, 1.53973 )
+position = Vector2( 4.61035, 1.53973 )
 shape = SubResource( 9 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 40, 8 )
+position = Vector2( 31.081, 8.03999 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 10 )
@@ -141,14 +144,12 @@ anims/RunLeft = SubResource( 11 )
 anims/RunRight = SubResource( 12 )
 
 [node name="EnemyDetector" type="Area2D" parent="."]
-visible = false
 modulate = Color( 0.913725, 0.129412, 0.129412, 1 )
 monitorable = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-visible = false
 position = Vector2( 2.21912, 3.0513 )
 shape = SubResource( 13 )
 

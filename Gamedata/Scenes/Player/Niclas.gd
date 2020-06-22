@@ -10,11 +10,12 @@ func _ready():
 
 
 func _on_IngmarDetector_body_entered(body):
-	print("Starte Dialog")
-	print(body.score)
-	#diabox.visible= true
-	diabox.open(body.score)
-	if body.score ==3:
-		body.nl =true
+	if body.name =="Ingmar":
+		print("Starte Dialog")
+		print(body.score)
+		#diabox.visible= true
+		diabox.open(body.score)
+		if body.score ==5:
+			body.nl =true
 	
 

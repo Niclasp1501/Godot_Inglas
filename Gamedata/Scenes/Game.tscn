@@ -486,7 +486,6 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="DiaBox" parent="Ingmar" instance=ExtResource( 11 )]
-visible = false
 margin_left = 171.661
 margin_top = 323.674
 margin_right = 171.661
@@ -576,7 +575,6 @@ __meta__ = {
 [node name="DiaInterface" type="CanvasLayer" parent="."]
 
 [node name="DiaBox_Nic1" parent="DiaInterface" instance=ExtResource( 12 )]
-visible = false
 anchor_top = 0.99
 anchor_right = 0.956
 anchor_bottom = 1.0
@@ -584,9 +582,9 @@ margin_left = 75.1584
 margin_top = -280.005
 margin_right = 0.214294
 margin_bottom = -6.00513
-[connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable2/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable3/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]

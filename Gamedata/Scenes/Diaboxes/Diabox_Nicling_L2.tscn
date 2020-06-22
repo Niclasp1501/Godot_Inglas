@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/DialogBox/HUD3.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Diaboxes/Diabox.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Diaboxes/Diabox_Nicling_L2.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Diaboxfont26.tres" type="DynamicFont" id=3]
 
 [node name="DiaBox" type="Control"]

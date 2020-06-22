@@ -14,4 +14,7 @@ func _on_IngmarDetector_body_entered(body):
 	print(body.score)
 	#diabox.visible= true
 	diabox.open(body.score)
+	if body.score ==3:
+		body.nl =true
+	
 

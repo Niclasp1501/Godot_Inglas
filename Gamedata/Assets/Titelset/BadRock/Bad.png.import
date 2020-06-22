@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Monster_Head.png-d3ca06fd194522efa8b188650b9f1d62.stex"
+path="res://.import/Bad.png-e898c3c0147fc2f90e4fe2c656af817b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Monster_CutoutAnimation/Monster_Head.png"
-dest_files=[ "res://.import/Monster_Head.png-d3ca06fd194522efa8b188650b9f1d62.stex" ]
+source_file="res://Assets/Titelset/BadRock/Bad.png"
+dest_files=[ "res://.import/Bad.png-e898c3c0147fc2f90e4fe2c656af817b.stex" ]
 
 [params]
 

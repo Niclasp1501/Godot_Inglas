@@ -7,7 +7,7 @@ const JUMP_POWER = -400
 const FLOOR = Vector2(0,-1)
 
 const STONE = preload("res://Assets/Weapon/Stone/Stone.tscn")
-
+var nl=false
 
 var velocity = Vector2()
 
@@ -80,4 +80,5 @@ func _physics_process(delta):
 
 
 func _on_SpacePart_body_entered(body):
-	score +=1
+	if body.name =="Ingmar":
+		score +=1

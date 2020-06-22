@@ -1,12 +1,13 @@
 extends Control
 
-
-onready var dialog=["Halllo Ingling",
- "Suche mir die verstreuten Raketenteile, damit wir von diesem Planeten runter kommen.","Du solltes mir zunächst 5 Teile bringen, damit ich schon mal anfangen kann."]
-
 onready var dialog_index=0
-onready var finished=false
+onready var dialog=["Halllo Ingling",
+ "Suche mir die verstreuten Raketenteile, damit wir von diesem Planeten runter kommen.","Du solltes mir zunächst 3 Teile bringen, damit ich schon mal anfangen kann."]
+onready var dialog_index2=0
+onready var dialog2=["Du hast die 3 Teile!", "Du kannst nun in die nächsten Teile  suchen", "Ich repariere schon mal und komme zu dir, sobald du den Rest hast."]
 
+onready var finished=false
+var score =0
 
 func _ready():
 	visible = false
@@ -20,7 +21,7 @@ func _process(delta):
 	
 func load_dialog():
 	print("hmm",dialog)
-	if dialog_index < dialog.size():
+	if dialog_index < dialog.size() and score<3 :
 		$RichTextLabel.bbcode_text = dialog[dialog_index]
 		$RichTextLabel.percent_visible=0
 		$Tween.interpolate_property(
@@ -28,17 +29,27 @@ func load_dialog():
 			0,1,1,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT
 		)
 		$Tween.start()
+		dialog_index+=1
+	elif dialog_index2 < dialog2.size() and score==3 :
+		$RichTextLabel.bbcode_text = dialog2[dialog_index2]
+		$RichTextLabel.percent_visible=0
+		$Tween.interpolate_property(
+			$RichTextLabel,"percent_visible",
+			0,1,1,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT
+		)
+		$Tween.start()
+		dialog_index2+=1
 	else:
 		#queue_free()
 		close()
-	dialog_index+=1
-
 func close():
 	visible = false
 
-func open():
+func open(x):
+	score=x
 	grab_focus()
 	visible = true
-	if dialog_index ==0:
+	print(score)
+	if dialog_index ==0 or score==3:
 		load_dialog()
 	

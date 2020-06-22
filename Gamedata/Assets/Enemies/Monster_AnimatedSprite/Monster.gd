@@ -14,6 +14,7 @@ func dead():
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")
+	$Timer.start(3)
 
 func _physics_process(delta):
 	if is_dead == false:	
@@ -39,3 +40,14 @@ func _physics_process(delta):
 			$RayCast2D.position.x *= -1
 	
 
+
+
+func _on_Timer_timeout():
+	if is_dead:
+		queue_free()
+
+
+#func _on_Area2D_body_entered(body):
+	#	if "Ingmar" in body.name:
+	#		get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")
+	#	

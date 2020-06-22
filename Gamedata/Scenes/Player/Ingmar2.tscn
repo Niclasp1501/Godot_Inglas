@@ -62,73 +62,30 @@ extents = Vector2( 15.6552, 22.8303 )
 [sub_resource type="Animation" id=10]
 resource_name = "Idle"
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
 
 [sub_resource type="Animation" id=11]
 resource_name = "RunLeft"
 length = 0.5
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 3, 6 ]
-}
 
 [sub_resource type="Animation" id=12]
 resource_name = "RunRight"
 length = 0.5
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 6, 8, 8 ]
-}
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 19.6114, 21.9249 )
+extents = Vector2( 20.1453, 21.9249 )
 
 [node name="Ingmar" type="KinematicBody2D"]
-position = Vector2( 317.919, 158.697 )
+position = Vector2( 319.88, 160.263 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-vframes = 3
-hframes = 3
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 frames = SubResource( 8 )
 animation = "RunLeft"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -145,8 +102,8 @@ anims/RunRight = SubResource( 12 )
 
 [node name="EnemyDetector" type="Area2D" parent="."]
 modulate = Color( 0.913725, 0.129412, 0.129412, 1 )
-monitorable = false
-collision_layer = 0
+input_pickable = false
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]

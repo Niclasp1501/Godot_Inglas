@@ -25,5 +25,10 @@ func _on_Stone_body_entered(body):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
+<<<<<<< HEAD
 func _on_Laser_body_entered(body):
+=======
+
+func _on_Laser_body_exited(body):
+>>>>>>> 98ca35d1902bd9bd2d1baa8848b6b373e7b984f2
 	queue_free()

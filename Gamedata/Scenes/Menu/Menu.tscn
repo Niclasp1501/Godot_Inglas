@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Logo/Inglas_Production.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Background/HUD3.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Menu/BTN_NeuesSpiel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Music/stellar-engine-soundtrack-2019.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Fonts/Diaboxfont26.tres" type="DynamicFont" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -53,11 +54,12 @@ alignment = 1
 [node name="Neues Spiel" parent="VBoxContainer/Cennter Rows/Buttons" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 138.0
+margin_top = 183.0
 margin_right = 971.0
-margin_bottom = 218.0
+margin_bottom = 263.0
 
 [node name="SpielladenBTN" parent="VBoxContainer/Cennter Rows/Buttons" instance=ExtResource( 4 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 228.0
@@ -93,3 +95,11 @@ __meta__ = {
 stream = ExtResource( 7 )
 volume_db = -37.673
 autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 250.219
+margin_top = 520.033
+margin_right = 777.219
+margin_bottom = 554.033
+custom_fonts/font = ExtResource( 8 )
+text = "von Ingmar Kieferle und Niclas Pflug "

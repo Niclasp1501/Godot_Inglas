@@ -17,3 +17,5 @@ func _on_IngmarDetector_body_entered(body):
 		if body.score ==3:
 			body.nl =true
 
+func EnterRocket():
+	queue_free()

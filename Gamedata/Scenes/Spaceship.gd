@@ -11,3 +11,11 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.x = SPEED * delta * direction
+	
+func RocketStart():
+	$AnimationPlayer.play("RocketStart")
+	$Timer.start(2)
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Scenes/Menu_YouWin/Menu_YouWin.tscn")

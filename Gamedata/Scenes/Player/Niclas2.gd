@@ -18,3 +18,5 @@ func _on_IngmarDetector_body_entered(body):
 		body.nl =true
 	
 
+func EnterRocket():
+	queue_free()

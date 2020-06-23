@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/Titelset/Stein-Titelset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Titelset/Wald-Titelset.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Background/Spaceship_fly.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Spaceship.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Player/Niclas2.gd" type="Script" id=17]
+[ext_resource path="res://Fonts/Diaboxfont26.tres" type="DynamicFont" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 48, 0, 48, 48, 0, 48 )
@@ -788,21 +790,39 @@ resource_local_to_scene = true
 } ]
 31/z_index = 0
 
+[sub_resource type="Animation" id=34]
+resource_name = "RocketStart"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2879.93, 483.681 ), Vector2( 2879.98, -500 ) ]
+}
+
 [sub_resource type="CapsuleShape2D" id=35]
 radius = 58.9197
 height = 198.903
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 15.6966, 35.1893 )
 
 [node name="Stage_1" type="Node2D"]
 
 [node name="Niclas" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2748.22, 598.171 )
+script = ExtResource( 17 )
 
 [node name="Door" parent="." instance=ExtResource( 14 )]
 position = Vector2( 69.5209, 112.905 )
 scale = Vector2( -1, 1 )
+script = null
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, -1.29236 )
@@ -837,7 +857,7 @@ autoplay = true
 max_distance = 10000.0
 
 [node name="Ingmar" parent="." instance=ExtResource( 6 )]
-position = Vector2( 112.9, 116.826 )
+position = Vector2( 68.9447, 116.125 )
 script = ExtResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="Ingmar"]
@@ -864,6 +884,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spaceship"]
+anims/RocketStart = SubResource( 34 )
+
 [node name="BO" type="Sprite" parent="Spaceship"]
 position = Vector2( -3.30933, 1.10803 )
 scale = Vector2( 0.181887, 0.156363 )
@@ -875,6 +898,8 @@ position = Vector2( 29.0208, -0.857391 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spaceship/KinematicBody2D"]
 position = Vector2( -28.8303, -14.8329 )
 shape = SubResource( 35 )
+
+[node name="Timer" type="Timer" parent="Spaceship"]
 
 [node name="Monster1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 891.691, 535.343 )
@@ -910,7 +935,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable1/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 34 )
+shape = SubResource( 36 )
 
 [node name="Collectable2" type="Node2D" parent="."]
 position = Vector2( 576.451, 316.115 )
@@ -928,7 +953,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable2/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 34 )
+shape = SubResource( 36 )
 
 [node name="Collectable3" type="Node2D" parent="."]
 position = Vector2( 1554.48, 509.903 )
@@ -946,7 +971,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable3/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 34 )
+shape = SubResource( 36 )
 
 [node name="Collectable4" type="Node2D" parent="."]
 position = Vector2( 840.359, 554.524 )
@@ -964,7 +989,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable4/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 34 )
+shape = SubResource( 36 )
 
 [node name="Collectable5" type="Node2D" parent="."]
 position = Vector2( 1429.37, 221.771 )
@@ -982,7 +1007,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable5/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 34 )
+shape = SubResource( 36 )
 
 [node name="Score Counter" type="Node2D" parent="."]
 
@@ -1000,6 +1025,7 @@ margin_left = 126.05
 margin_top = 10.7142
 margin_right = 166.05
 margin_bottom = 50.7142
+custom_fonts/normal_font = ExtResource( 18 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1008,21 +1034,21 @@ __meta__ = {
 [node name="DiaInterface" type="CanvasLayer" parent="."]
 
 [node name="DiaBox_Nic2" parent="DiaInterface" instance=ExtResource( 11 )]
-visible = false
 anchor_top = 1.0
 anchor_right = 0.953
 anchor_bottom = 1.0
-margin_left = 47.3685
-margin_top = -431.579
-margin_right = -24.5037
-margin_bottom = -151.579
-[connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
+margin_left = 55.0486
+margin_top = -257.667
+margin_right = -16.8236
+margin_bottom = 22.3328
+[connection signal="timeout" from="Spaceship/Timer" to="Spaceship" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable2/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable3/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable4/SpacePart" to="Collectable4/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable4/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable5/SpacePart" to="Collectable5/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable4/SpacePart" to="Collectable4/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable5/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable5/SpacePart" to="Collectable5/SpacePart" method="_on_SpacePart_body_entered"]

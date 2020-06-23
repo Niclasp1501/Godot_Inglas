@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Background/Spaceship.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Titelset/Wald-Titelset.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Diaboxes/Diabox_Nicling_L1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/BadRock.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Fonts/Diaboxfont26.tres" type="DynamicFont" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 48, 0, 48, 48, 0, 48 )
@@ -414,7 +415,7 @@ extents = Vector2( 15.6966, 35.1893 )
 position = Vector2( 257.159, 549.908 )
 
 [node name="Door" parent="." instance=ExtResource( 14 )]
-position = Vector2( 464.588, 544.967 )
+position = Vector2( 2894.67, 63.8197 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, -1.29236 )
@@ -485,9 +486,6 @@ drag_margin_bottom = 0.26
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Monster1" parent="Ingmar" instance=ExtResource( 7 )]
-position = Vector2( 1947.32, -397.807 )
-
 [node name="DiaBox" parent="Ingmar" instance=ExtResource( 11 )]
 margin_left = 171.661
 margin_top = 323.674
@@ -496,6 +494,9 @@ margin_bottom = 323.674
 
 [node name="Monster2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 979.055, 389.388 )
+
+[node name="Monster1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2308.29, 149.849 )
 
 [node name="Collectable1" type="Node2D" parent="."]
 position = Vector2( 546.762, 269 )
@@ -516,7 +517,7 @@ position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
 [node name="Collectable4" type="Node2D" parent="."]
-position = Vector2( 526.346, 554.701 )
+position = Vector2( 1230.88, -58.1891 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -534,7 +535,7 @@ position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
 [node name="Collectable5" type="Node2D" parent="."]
-position = Vector2( 526.346, 554.701 )
+position = Vector2( 1411.31, -61.053 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -552,7 +553,7 @@ position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
 [node name="Collectable6" type="Node2D" parent="."]
-position = Vector2( 526.346, 554.701 )
+position = Vector2( 814.175, 72.1217 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -570,7 +571,7 @@ position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
 [node name="Collectable2" type="Node2D" parent="."]
-position = Vector2( 922.724, 410.809 )
+position = Vector2( 1316.52, -61.7464 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -588,7 +589,7 @@ position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
 [node name="Collectable3" type="Node2D" parent="."]
-position = Vector2( 1786.78, 171.175 )
+position = Vector2( 2161.96, 311.51 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -621,6 +622,7 @@ margin_left = 126.05
 margin_top = 10.7142
 margin_right = 166.05
 margin_bottom = 50.7142
+custom_fonts/normal_font = ExtResource( 15 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -632,19 +634,19 @@ __meta__ = {
 anchor_top = 0.99
 anchor_right = 0.956
 anchor_bottom = 1.0
-margin_left = 75.1584
-margin_top = -280.005
-margin_right = 0.214294
-margin_bottom = -6.00513
-[connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+margin_left = 80.4832
+margin_top = -255.908
+margin_right = 5.53906
+margin_bottom = 18.0918
 [connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable4/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable4/SpacePart" to="Collectable4/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable5/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable4/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable5/SpacePart" to="Collectable5/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable6/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable5/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable6/SpacePart" to="Collectable6/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable2/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable6/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable3/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable2/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable3/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]

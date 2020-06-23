@@ -3,14 +3,13 @@
 [ext_resource path="res://Assets/Player/Niclas/Niclas_run.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Niclas.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.0116, 19.8626 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15.6552, 22.8303 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -25,8 +24,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "RunLeft"
+[sub_resource type="Animation" id=4]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -42,8 +40,7 @@ tracks/0/keys = {
 "values": [ 3, 6 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "RunRight"
+[sub_resource type="Animation" id=5]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -76,18 +73,18 @@ collision_mask = 5127
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IngmarDetector"]
 position = Vector2( 28.634, 3.05132 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 one_way_collision_margin = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.53781, 3.16874 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 31.081, 8.03999 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 2 )
-anims/RunLeft = SubResource( 3 )
-anims/RunRight = SubResource( 4 )
+anims/Idle = SubResource( 3 )
+anims/RunLeft = SubResource( 4 )
+anims/RunRight = SubResource( 5 )
 [connection signal="body_entered" from="IngmarDetector" to="." method="_on_IngmarDetector_body_entered"]

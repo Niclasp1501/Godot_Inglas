@@ -8,14 +8,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -36,7 +36,6 @@ position = Vector2( 48.2969, 98.3276 )
 scale = Vector2( 1.6517, 1.78427 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -49,7 +48,6 @@ enabled = true
 cast_to = Vector2( 0, 20 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,10 +1,14 @@
 extends Control
 
 onready var dialog_index=0
-onready var dialog=["Halllo Ingling",
- "Suche mir die verstreuten Raketenteile, damit wir von diesem Planeten runter kommen.","Du solltes mir zunächst 3 Teile bringen, damit ich schon mal anfangen kann."]
+onready var dialog=["Hallo Ingling!",
+ "Suche mir die verstreuten Raketenteile, damit wir von diesem Planeten verschwinden können.",
+"Du solltes mir zunächst 3 Teile bringen, damit ich schon mal anfangen kann, dass Raumschiff zu reparieren."]
 onready var dialog_index2=0
-onready var dialog2=["Du hast die 3 Teile!", "Du kannst nun in die nächsten Teile  suchen", "Ich repariere schon mal und komme zu dir, sobald du den Rest hast."]
+onready var dialog2=["Du hast die 3 Teile!", 
+"Du kannst nun die nächsten Teile suchen",
+ "Ich baue diese Teile  schon mal ein und komme zu dir, sobald du die restlichen Teile gefunden hast.",
+"Damit du dich besser gegen diese Monster verteidigen kannst, nimm mein Faser mit!"]
 
 onready var finished=false
 var score =0

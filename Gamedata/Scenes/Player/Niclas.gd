@@ -7,15 +7,13 @@ func _ready():
 	print(diabox)
 
 
-
-
 func _on_IngmarDetector_body_entered(body):
 	if body.name =="Ingmar":
+		print("hi")
 		print("Starte Dialog")
 		print(body.score)
 		#diabox.visible= true
 		diabox.open(body.score)
-		if body.score ==5:
+		if body.score ==3:
 			body.nl =true
-	
 

@@ -36,7 +36,7 @@ position = Vector2( 48.2969, 98.3276 )
 scale = Vector2( 1.6517, 1.78427 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -49,6 +49,7 @@ enabled = true
 cast_to = Vector2( 0, 20 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Assets/Titelset/Stein-Titelset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Titelset/Wald-Titelset.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/BadRock.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Background/Spaceship_fly.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Spaceship.gd" type="Script" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 48, 0, 48, 48, 0, 48 )
@@ -787,16 +788,17 @@ resource_local_to_scene = true
 } ]
 31/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 50.8429, 24.1065 )
+[sub_resource type="CapsuleShape2D" id=35]
+radius = 58.9197
+height = 198.903
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 15.6966, 35.1893 )
 
 [node name="Stage_1" type="Node2D"]
 
 [node name="Niclas" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2754.97, 601.098 )
+position = Vector2( 2748.22, 598.171 )
 
 [node name="Door" parent="." instance=ExtResource( 14 )]
 position = Vector2( 69.5209, 112.905 )
@@ -857,6 +859,10 @@ editor_draw_drag_margin = true
 position = Vector2( 2879.93, 483.681 )
 scale = Vector2( 1.00448, 1 )
 texture = ExtResource( 15 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="BO" type="Sprite" parent="Spaceship"]
 position = Vector2( -3.30933, 1.10803 )
@@ -864,12 +870,11 @@ scale = Vector2( 0.181887, 0.156363 )
 texture = ExtResource( 5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Spaceship"]
-visible = false
 position = Vector2( 29.0208, -0.857391 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spaceship/KinematicBody2D"]
-position = Vector2( -235.363, 98.9015 )
-shape = SubResource( 34 )
+position = Vector2( -28.8303, -14.8329 )
+shape = SubResource( 35 )
 
 [node name="Monster1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 891.691, 535.343 )
@@ -905,7 +910,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable1/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
+shape = SubResource( 34 )
 
 [node name="Collectable2" type="Node2D" parent="."]
 position = Vector2( 576.451, 316.115 )
@@ -923,7 +928,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable2/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
+shape = SubResource( 34 )
 
 [node name="Collectable3" type="Node2D" parent="."]
 position = Vector2( 1554.48, 509.903 )
@@ -941,7 +946,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable3/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
+shape = SubResource( 34 )
 
 [node name="Collectable4" type="Node2D" parent="."]
 position = Vector2( 840.359, 554.524 )
@@ -959,7 +964,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable4/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
+shape = SubResource( 34 )
 
 [node name="Collectable5" type="Node2D" parent="."]
 position = Vector2( 1429.37, 221.771 )
@@ -977,7 +982,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable5/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
+shape = SubResource( 34 )
 
 [node name="Score Counter" type="Node2D" parent="."]
 

@@ -13,7 +13,7 @@ var nl= true
 var velocity = Vector2()
 var on_ground = false
 var is_dead = false
-var score = 0
+var score = 3
 
 func _on_EnemyDetector_body_entered(body):
 	get_tree().change_scene("res://Scenes/Menu_YouDied/Menu_YouDied.tscn")

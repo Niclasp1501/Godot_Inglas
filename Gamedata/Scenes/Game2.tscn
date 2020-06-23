@@ -835,11 +835,11 @@ autoplay = true
 max_distance = 10000.0
 
 [node name="Ingmar" parent="." instance=ExtResource( 6 )]
-position = Vector2( 147.858, 118.45 )
+position = Vector2( 112.9, 116.826 )
 script = ExtResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="Ingmar"]
-position = Vector2( -182.539, 196.355 )
+position = Vector2( -147.581, 197.979 )
 current = true
 limit_left = 0
 limit_top = 0
@@ -871,9 +871,6 @@ position = Vector2( 29.0208, -0.857391 )
 position = Vector2( -235.363, 98.9015 )
 shape = SubResource( 34 )
 
-[node name="Monster1" parent="." instance=ExtResource( 7 )]
-position = Vector2( 891.691, 535.343 )
-
 [node name="Monster2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 93.5573, 291.941 )
 
@@ -895,78 +892,6 @@ script = ExtResource( 9 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable1/SpacePart"]
-position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
-
-[node name="Collectable2" type="Node2D" parent="."]
-position = Vector2( 581.414, 300.817 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="SpacePart" type="Area2D" parent="Collectable2"]
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="Collectable2/SpacePart"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable2/SpacePart"]
-position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
-
-[node name="Collectable3" type="Node2D" parent="."]
-position = Vector2( 1183.29, 638.734 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="SpacePart" type="Area2D" parent="Collectable3"]
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="Collectable3/SpacePart"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable3/SpacePart"]
-position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
-
-[node name="Collectable4" type="Node2D" parent="."]
-position = Vector2( 1450.15, 193.13 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="SpacePart" type="Area2D" parent="Collectable4"]
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="Collectable4/SpacePart"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable4/SpacePart"]
-position = Vector2( -1.88677, 1.13206 )
-shape = SubResource( 35 )
-
-[node name="Collectable5" type="Node2D" parent="."]
-position = Vector2( 1598.77, 507.674 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="SpacePart" type="Area2D" parent="Collectable5"]
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="Collectable5/SpacePart"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable5/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 35 )
 
@@ -1002,8 +927,8 @@ margin_left = 47.3685
 margin_top = -431.579
 margin_right = -24.5037
 margin_bottom = -151.579
+
+[node name="Monster1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 891.691, 535.343 )
 [connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable3/SpacePart" to="Collectable3/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable4/SpacePart" to="Collectable4/SpacePart" method="_on_SpacePart_body_entered"]
-[connection signal="body_entered" from="Collectable5/SpacePart" to="Collectable5/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]

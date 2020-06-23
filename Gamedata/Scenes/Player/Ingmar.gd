@@ -84,3 +84,5 @@ func _physics_process(delta):
 func _on_SpacePart_body_entered(body):
 	if body.name == "Ingmar":
 		score +=1
+	if score == 3:
+		nl ==true

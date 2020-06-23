@@ -414,7 +414,7 @@ extents = Vector2( 15.6966, 35.1893 )
 position = Vector2( 257.159, 549.908 )
 
 [node name="Door" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2916.3, 73.3787 )
+position = Vector2( 464.588, 544.967 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, -1.29236 )
@@ -437,7 +437,7 @@ scroll_base_scale = Vector2( 0.1, 0.1 )
 motion_mirroring = Vector2( 816, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 319.257, 161.83 )
+position = Vector2( 319.257, 161.428 )
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -314.888, -165.008 )
@@ -485,20 +485,20 @@ drag_margin_bottom = 0.26
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="Monster1" parent="Ingmar" instance=ExtResource( 7 )]
+position = Vector2( 1947.32, -397.807 )
+
 [node name="DiaBox" parent="Ingmar" instance=ExtResource( 11 )]
 margin_left = 171.661
 margin_top = 323.674
 margin_right = 171.661
 margin_bottom = 323.674
 
-[node name="Monster1" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2305.7, 149.849 )
-
 [node name="Monster2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 979.055, 389.388 )
 
 [node name="Collectable1" type="Node2D" parent="."]
-position = Vector2( 527.687, 266.998 )
+position = Vector2( 546.762, 269 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -512,6 +512,60 @@ script = ExtResource( 9 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable1/SpacePart"]
+position = Vector2( -1.88677, 1.13206 )
+shape = SubResource( 19 )
+
+[node name="Collectable4" type="Node2D" parent="."]
+position = Vector2( 526.346, 554.701 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpacePart" type="Area2D" parent="Collectable4"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectable4/SpacePart"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable4/SpacePart"]
+position = Vector2( -1.88677, 1.13206 )
+shape = SubResource( 19 )
+
+[node name="Collectable5" type="Node2D" parent="."]
+position = Vector2( 526.346, 554.701 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpacePart" type="Area2D" parent="Collectable5"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectable5/SpacePart"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable5/SpacePart"]
+position = Vector2( -1.88677, 1.13206 )
+shape = SubResource( 19 )
+
+[node name="Collectable6" type="Node2D" parent="."]
+position = Vector2( 526.346, 554.701 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpacePart" type="Area2D" parent="Collectable6"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectable6/SpacePart"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable6/SpacePart"]
 position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
@@ -534,7 +588,7 @@ position = Vector2( -1.88677, 1.13206 )
 shape = SubResource( 19 )
 
 [node name="Collectable3" type="Node2D" parent="."]
-position = Vector2( 2114.49, 317.572 )
+position = Vector2( 1786.78, 171.175 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -584,6 +638,12 @@ margin_right = 0.214294
 margin_bottom = -6.00513
 [connection signal="body_entered" from="Collectable1/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable1/SpacePart" to="Collectable1/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable4/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable4/SpacePart" to="Collectable4/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable5/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable5/SpacePart" to="Collectable5/SpacePart" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable6/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
+[connection signal="body_entered" from="Collectable6/SpacePart" to="Collectable6/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable2/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable2/SpacePart" to="Collectable2/SpacePart" method="_on_SpacePart_body_entered"]
 [connection signal="body_entered" from="Collectable3/SpacePart" to="Ingmar" method="_on_SpacePart_body_entered"]
